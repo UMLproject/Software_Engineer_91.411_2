@@ -22,13 +22,13 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 
 
 ####**Project Synopsis**
-Robotic sensor administration application interface framework.  The final goal of this project is to create a [ROS][1]-based system to allow interactive communication between a sensor device and a cloud.  It is being developed for [Ubuntu][5] 12.04-15.04, although it should run on other UNIX/Linux-based systems.  This package also includes basic simulated TCP/IP message topics for imu (accelerometer), compass, image, and pointcloud types. 
+Robotic sensor administration application interface framework.  The final goal of this project is to create a [ROS][1]-based system to allow interactive communication between a sensor device and a cloud.  It is being developed for [Ubuntu][5] 12.04-15.04 *(tested with 14.04)*, although it should run on other UNIX/Linux-based systems.  This package also includes basic simulated TCP/IP message topics for imu (accelerometer), compass, image, and pointcloud types. 
 **Warning: This project is currently in a Beta phase.  Expected completion date is May 4 2015.**
-**Warning: Installer scripts have not yet been fully tested.  Since they make modifications on an operating systems level, we do not advice using them at this point.**
+**Warning: Installer scripts have not yet been fully tested.  Since they make modifications on an operating systems level, we do not advise using them at this point.**
 
 
 ####**Dependencies**
-- [Ubuntu][5] 12.04-15.04
+- [Ubuntu][5] 12.04-15.04 *(tested with 14.04)*
 - [ROS][1] hydro or later (catkin)
 - [QT4][3] Project
 - [QGLViewer][8]
@@ -42,12 +42,14 @@ Robotic sensor administration application interface framework.  The final goal o
 
 Follow the instructions for installing [ROS][1].  It is strongly advised to choose
 the ```ros-<version>-desktop-full``` option to install all necessary ROS packages. 
-*Note: This step is not necessary for running the **frontend** or **prototype**.*
+*Note: This step is not necessary for running the frontend or prototype.*
 
 Install additional packages via ros:
 ```
-sudo apt-get install ros-indigo-sound*
-sudo apt-get install ros-indigo-pocketsphinx
+sudo apt-get install ros-<ros_version>-sound*
+sudo apt-get install ros-<ros_version>-openni*
+sudo apt-get install ros-<ros_version>-openni2*
+sudo apt-get install ros-<ros_version>-pocketsphinx
 ```
 
 Install pocketsphinx dependency:
@@ -104,7 +106,7 @@ git clone https://github.com/DeepBlue14/sensor-admin.git
 - Open ```sensor_admin_NB```
 - Build & Run
 
-*This project has **ONLY** been tested on the NetBeans IDE.  If you are using an IDE that cannot process CMake files, you may have to manually link against the dependencies (this is NOT nessisary for NetBeans):*
+*This project has been tested on the NetBeans IDE.  If you are using an IDE that cannot process CMake files, you may have to manually link against the dependencies (this is NOT nessisary for NetBeans):*
 ```
 QtCore
 QtGui
@@ -136,7 +138,7 @@ catkin_make
 Clone the package:
 ```
 cd ~/se_ws/src
-git clone https://github.com/DeepBlue14/sensor-admin.git
+git clone https://github.com/UMLproject/Software_Engineer_91.411_2.git
 cd ~/se_ws
 source devel/setup.bash
 catkin_make
@@ -171,7 +173,7 @@ rosrun speech_node ManageNodeStatus
 
 #####**3) Simulations**
 
-There are several sensor simulations.
+There are several sensor simulations.  These construct data objects of the same type they would be from sensor -> ROS.  The speed at which each simulator publishes data is currently hard-coded at a rate of 10 hz., and the data values are contained in an array.  These values/rates can be changed by the user (by going into the source file and modifying them).
 
 Accelerometer simulator will publish ```sensor_msgs/Imu``` to
 ```/accelerometer/imu/sim```.  It will also print the linear acceleration
