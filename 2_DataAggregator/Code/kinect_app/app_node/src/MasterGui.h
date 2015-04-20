@@ -52,6 +52,7 @@ private:
     DevicesGui* devicesGui; /**Pointer to object of class DevicesGui.*/
     HistoryGui* historyGui; /**Pointer to object of class HistoryGui.*/
     HelpGui* helpGui; /**Pointer to object of class HelpGui.*/
+    MasterGui* masterGui;
     
     QPushButton* signUpBtn; /**Button to allow the user without existing account to sign up to application.*/
     QPushButton* signInBtn; /**Button to allow the user with existing account to sign in.*/
@@ -94,7 +95,7 @@ private:
     
     Page currentPage; /**The current page loaded/displayed.*/
     
-private slots:
+public slots:
     void handleSignUpBtnSlot(); /**Slot to handle the "Sign Up" button.*/
     void handleSignInBtnSlot(); /**Slot to handle the "Sign In" button.*/
     void handleLoginBtnSlot(); /**Slot to handle the "Login" button.*/
@@ -234,6 +235,17 @@ public:
      * un-editable the corresponding aforementioned object and appropriate buttons. 
      */    
     void unloadHistoryGui();
+
+    /**
+     * This method stores a reference to the MasterGui object.
+     * @param masterGui The pointer to the MasterGui object.
+     */
+    void setMasterGui(MasterGui* masterGui);
+
+    /**
+     * This method returns a reference to the MasterGui object.
+     */
+    MasterGui* getMasterGui();
     
     /**
      * Destructor.

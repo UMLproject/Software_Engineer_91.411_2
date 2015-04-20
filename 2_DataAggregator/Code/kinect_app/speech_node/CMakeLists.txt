@@ -16,6 +16,15 @@ find_package(catkin REQUIRED COMPONENTS
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+find_package(Boost REQUIRED COMPONENTS system filesystem regex)
+
+find_package(QJSON)
+
+find_package(Qt REQUIRED COMPONENTS QtCore QtGui QtWidgets QtOpenGL QtXml QtSql)
+include(${QT_USE_FILE})
+ADD_DEFINITIONS(${QT_DEFINITIONS})
+
+set(CMAKE_AUTOMOC ON)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -164,6 +173,32 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(speech_main src/speech_main.cpp
+                    	   src/SpeechController.cpp
+		    	   ../app_node/src/AddDeviceGui.cpp
+			   ../app_node/src/AddUserGui.cpp
+			   ../app_node/src/CenterGui.cpp
+			   ../app_node/src/DeviceAbstractGui.cpp
+			   ../app_node/src/DevicesGui.cpp
+			   ../app_node/src/HelpGui.cpp
+			   ../app_node/src/HistoryGui.cpp
+			   ../app_node/src/LoginGui.cpp
+			   ../app_node/src/MasterGui.cpp
+			   ../app_node/src/Menu.cpp
+			   ../app_node/src/ModifyDeviceGui.cpp
+			   ../app_node/src/ModifyUserGui.cpp
+			   ../app_node/src/OpeningGui.cpp
+			   ../app_node/src/ResultsGui.cpp
+			   ../app_node/src/SplashGui.cpp
+			   ../app_node/src/UserAbstractGui.cpp
+			   ../app_node/src/UsersGui.cpp
+			   ../app_node/src/VideoGui.cpp
+			   ../app_node/src/ViewUserGui.cpp)
+target_link_libraries(speech_main ${catkin_LIBRARIES})
+target_link_libraries(speech_main ${QT_LIBRARIES})
+target_link_libraries(speech_main ${Boost_LIBRARIES})
+target_link_libraries(speech_main ${QJson})
 
 add_executable(ManageNodeStatus src/ManageNodeStatus.cpp)
 target_link_libraries(ManageNodeStatus ${catkin_LIBRARIES})

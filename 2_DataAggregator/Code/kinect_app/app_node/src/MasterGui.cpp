@@ -485,6 +485,17 @@ void MasterGui::unloadHistoryGui()
 }
 
 
+void MasterGui::setMasterGui(MasterGui* masterGui)
+{
+    this->masterGui = masterGui;
+}
+
+MasterGui* MasterGui::getMasterGui()
+{
+    return masterGui;
+}
+
+
 MasterGui::~MasterGui()
 {
     ;

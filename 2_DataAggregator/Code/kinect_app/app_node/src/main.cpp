@@ -30,6 +30,7 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     
     MasterGui masterGui;
+    masterGui.setMasterGui(&masterGui);
     masterGui.show();
     
     //LocalDBMaster localDBMaster;
