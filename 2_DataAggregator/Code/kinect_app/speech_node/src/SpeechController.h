@@ -15,7 +15,6 @@
 #include <std_msgs/String.h>
 #include <iostream>
 
-//#include "/home/james/se_ws/src/Software_Engineer_91.411_2/2_DataAggregator/Code/kinect_app/app_node/src/MasterGui.h"
 #include "../../app_node/src/MasterGui.h"
 
 using namespace std;
@@ -26,7 +25,7 @@ class SpeechController
 private:
     ;
 
-enum Command
+enum Command //enumeration types for each speech command
      {
          ACTIVATE,
          DEACTIVATE,
@@ -37,12 +36,12 @@ enum Command
 	 DEVICES,
 	 HISTORY,
 	 HELP,
-	 Exit,
+	 EXIT,
 	 HIDE_MENU,
 	 SHOW_MENU
      };
-    Command command;
-    MasterGui* masterGui;
+    Command command; //instance of Command to hold the current speech command
+    MasterGui* masterGui; //speech_node's instance of MasterGui
 
 public:
     SpeechController();
