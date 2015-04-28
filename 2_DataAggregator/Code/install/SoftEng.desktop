@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=SoftEng
+Type=Application
+Exec=~/NetBeansProjects/Se_Project/dist/Debug/GNU-Linux-x86/Se_Project
+Terminal=false
+Icon=~/NetBeansProjects/Se_Project/se_logo.xpm
+Comment=Application for Software Engineering I class
+NoDisplay=false
+Categories=Applications;Apps;
+Name[en]=SoftEng
+X-Desktop-File-Install-Version=0.22
