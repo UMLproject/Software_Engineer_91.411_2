@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <itemPath>src/AddDeviceGui.h</itemPath>
+        <itemPath>src/AddUserGui.h</itemPath>
+        <itemPath>src/AppStyles.h</itemPath>
+        <itemPath>src/AppStyles.tcc</itemPath>
+        <itemPath>src/CenterGui.h</itemPath>
+        <itemPath>src/Coder.h</itemPath>
+        <itemPath>src/Device.h</itemPath>
+        <itemPath>src/DeviceAbstractGui.h</itemPath>
+        <itemPath>src/DevicesGui.h</itemPath>
+        <itemPath>src/HelpGui.h</itemPath>
+        <itemPath>src/HistoryGui.h</itemPath>
+        <itemPath>src/JsonParser.h</itemPath>
+        <itemPath>src/LocalDBMaster.h</itemPath>
+        <itemPath>src/LoginGui.h</itemPath>
+        <itemPath>src/MasterGui.h</itemPath>
+        <itemPath>src/Menu.h</itemPath>
+        <itemPath>src/ModifyDeviceGui.h</itemPath>
+        <itemPath>src/ModifyUserGui.h</itemPath>
+        <itemPath>src/OpeningGui.h</itemPath>
+        <itemPath>src/ResultsGui.h</itemPath>
+        <itemPath>src/SplashGui.h</itemPath>
+        <itemPath>src/User.h</itemPath>
+        <itemPath>src/UserAbstractGui.h</itemPath>
+        <itemPath>src/UsersGui.h</itemPath>
+        <itemPath>src/VideoGui.h</itemPath>
+        <itemPath>src/ViewUserGui.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <itemPath>src/AddDeviceGui.cpp</itemPath>
+        <itemPath>src/AddUserGui.cpp</itemPath>
+        <itemPath>src/CenterGui.cpp</itemPath>
+        <itemPath>src/Coder.cpp</itemPath>
+        <itemPath>src/Device.cpp</itemPath>
+        <itemPath>src/DeviceAbstractGui.cpp</itemPath>
+        <itemPath>src/DevicesGui.cpp</itemPath>
+        <itemPath>src/HelpGui.cpp</itemPath>
+        <itemPath>src/HistoryGui.cpp</itemPath>
+        <itemPath>src/JsonParser.cpp</itemPath>
+        <itemPath>src/LocalDBMaster.cpp</itemPath>
+        <itemPath>src/LoginGui.cpp</itemPath>
+        <itemPath>src/MasterGui.cpp</itemPath>
+        <itemPath>src/Menu.cpp</itemPath>
+        <itemPath>src/ModifyDeviceGui.cpp</itemPath>
+        <itemPath>src/ModifyUserGui.cpp</itemPath>
+        <itemPath>src/OpeningGui.cpp</itemPath>
+        <itemPath>src/ResultsGui.cpp</itemPath>
+        <itemPath>src/SplashGui.cpp</itemPath>
+        <itemPath>src/User.cpp</itemPath>
+        <itemPath>src/UserAbstractGui.cpp</itemPath>
+        <itemPath>src/UsersGui.cpp</itemPath>
+        <itemPath>src/VideoGui.cpp</itemPath>
+        <itemPath>src/ViewUserGui.cpp</itemPath>
+        <itemPath>src/main.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <modules>core gui widgets sql xml</modules>
+        <mocDir>moc</mocDir>
+      </qt>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>qjson</linkerLibLibItem>
+            <linkerLibLibItem>sqlite3</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="src/AddDeviceGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AddDeviceGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AddUserGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AddUserGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AppStyles.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AppStyles.tcc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CenterGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CenterGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Coder.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Coder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Device.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Device.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DeviceAbstractGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DeviceAbstractGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DevicesGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DevicesGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HelpGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HelpGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HistoryGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HistoryGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/JsonParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/JsonParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LocalDBMaster.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LocalDBMaster.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LoginGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LoginGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MasterGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MasterGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Menu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ModifyDeviceGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ModifyDeviceGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ModifyUserGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ModifyUserGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/OpeningGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/OpeningGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ResultsGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ResultsGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SplashGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SplashGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/User.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/User.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UserAbstractGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UserAbstractGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UsersGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UsersGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VideoGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VideoGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ViewUserGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ViewUserGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <buildMode>1</buildMode>
+        <modules>core gui widgets</modules>
+      </qt>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/AddDeviceGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AddDeviceGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AddUserGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AddUserGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AppStyles.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/AppStyles.tcc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CenterGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CenterGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Coder.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Coder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Device.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Device.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DeviceAbstractGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DeviceAbstractGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DevicesGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DevicesGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HelpGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HelpGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HistoryGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HistoryGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/JsonParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/JsonParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LocalDBMaster.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LocalDBMaster.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/LoginGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/LoginGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/MasterGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/MasterGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Menu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ModifyDeviceGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ModifyDeviceGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ModifyUserGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ModifyUserGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/OpeningGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/OpeningGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ResultsGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ResultsGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SplashGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SplashGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/User.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/User.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UserAbstractGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UserAbstractGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UsersGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UsersGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VideoGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VideoGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ViewUserGui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ViewUserGui.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
