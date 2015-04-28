@@ -31,30 +31,29 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 
 
 
-####**Installation **
+####**Installation**
 
 
-Install [QT4][3]:
+Install [QT4][1]:
 ```
 sudo apt-get install libqt4-*
 ```
 
 
-Install [QJson][7]
+Install [QJson][4]
 ```
 sudo apt-get install libqjson0 libqjson-*
 ```
 
 
-Install [SQLite][6]
+Install [SQLite][3]
 ```
 sudo apt-get install sqlite3 libsqlite3-dev
 ```
 
 
 
-###**Build & Run**
-
+####**Build & Run**
 *(TBA)*
 
 
