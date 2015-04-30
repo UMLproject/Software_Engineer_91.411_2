@@ -14,6 +14,7 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 - Project Synopsis
 - Dependencies
 - Installation
+- Build & Run
 
 
 
@@ -35,26 +36,40 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 
 
 Install [QT4][1]:
-```
+```bash
 sudo apt-get install libqt4-*
 ```
 
 
 Install [QJson][4]
-```
+```bash
 sudo apt-get install libqjson0 libqjson-*
 ```
 
 
 Install [SQLite][3]
-```
+```bash
 sudo apt-get install sqlite3 libsqlite3-dev
 ```
 
 
 
 ####**Build & Run**
-*(TBA)*
+
+
+This project was built using the NetBeans IDE, since it is one which we are all familiar with *(we use it in Computing IV)*.  Instructions for running with other IDEs such as Eclipse should be similar.  
+
+Start NetBeans, press the "**Open Project**" button.  Navigate to the project, and open the "**Code**" folder.  The configuration files included should link to external resources, but to double check:
+- Right-click the project
+- Select "Properties"
+- Select "Qt" from the options on the left.
+- Make sure that the following checkboxes are selected: "**QtCore**", "**QtGui**", "**QtWidgets**", "**QtSql**", "**QtXml**".
+- "MOC Directory" should be "moc" *(optional)*
+
+- Next, select "Linker" from the options on the left.
+- Under "Libraries" should be listed "**qjson**" and "**sqlite3**".  If these are NOT present, then select the "..." button, type "Add Library..." and type "qjson".  Press "OK".  Then repete the operation to add "sqlite3".
+
+If this is done correctly, the application should be ready to compile/run.  Press the green arrow run button to launch the app.
 
 
 
