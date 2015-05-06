@@ -1,3 +1,5 @@
+#include <qt4/QtGui/qmessagebox.h>
+
 #include "DeviceAbstractGui.h"
 
 
@@ -37,7 +39,7 @@ DeviceAbstractGui::DeviceAbstractGui(QWidget* parent) : QWidget(parent)
 }
 
 
-void DeviceAbstractGui::handleOkBtnSlot()
+bool DeviceAbstractGui::handleOkBtnSlot()
 {
     if(idStr != idLe->text())
     {
@@ -51,7 +53,7 @@ void DeviceAbstractGui::handleOkBtnSlot()
         typeStrVec.push_back(typeStr);
         idStrVec.push_back(idStr);
         ipAddressStrVec.push_back(ipAddressStr);
-        preferenceStrVec.push_back(preferenceStr);
+        preferenceBoolVec.push_back(preferenceStr);
         noteStrVec.push_back(noteStr);
         
         typeLe->setText("");
@@ -64,11 +66,18 @@ void DeviceAbstractGui::handleOkBtnSlot()
     }
     
     cout << toString() << endl;
-
+    
+    QMessageBox* msg = new QMessageBox();
+    msg->setText("<qt><b>Note!</b><qt>");
+    msg->setInformativeText("<qt>\nPress the <b>Devices</b> button to update the table</qt>");
+    msg->setStandardButtons(QMessageBox::Ok);
+    msg->exec();
+    
+    return true;
 }
 
 
-void DeviceAbstractGui::handleApplyBtnSlot()
+bool DeviceAbstractGui::handleApplyBtnSlot()
 {
     if(idStr != idLe->text())
     {
@@ -81,16 +90,54 @@ void DeviceAbstractGui::handleApplyBtnSlot()
         typeStrVec.push_back(typeStr);
         idStrVec.push_back(idStr);
         ipAddressStrVec.push_back(ipAddressStr);
-        preferenceStrVec.push_back(preferenceStr);
+        preferenceBoolVec.push_back(preferenceStr);
         noteStrVec.push_back(noteStr);
 
     }
+    
+    QMessageBox* msg = new QMessageBox();
+    msg->setText("<qt><b>Note!</b><qt>");
+    msg->setInformativeText("<qt>\nPress the <b>Devices</b> button to update the table</qt>");
+    msg->setStandardButtons(QMessageBox::Ok);
+    msg->exec();
+    
+    return true;
 }
 
 
 void DeviceAbstractGui::handleCancelBtnSlot()
 {
     this->close();
+}
+
+
+QVector<QString> DeviceAbstractGui::getTypesStrVec()
+{
+    return typeStrVec;
+}
+
+
+QVector<QString> DeviceAbstractGui::getIdStrVec()
+{
+    return idStrVec;
+}
+
+
+QVector<QString> DeviceAbstractGui::getIpAddressStrVec()
+{
+    return ipAddressStrVec;
+}
+
+
+QVector<bool> DeviceAbstractGui::getPreferenceBoolVec()
+{
+    return preferenceBoolVec;
+}
+
+
+QVector<QString> DeviceAbstractGui::getNoteStrVec()
+{
+    return noteStrVec;
 }
 
 
@@ -107,7 +154,7 @@ string DeviceAbstractGui::toString()
         tmp.append("\t");
         tmp.append(ipAddressStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(preferenceStrVec.at(i) + "");
+        tmp.append(preferenceBoolVec.at(i) + "");
         tmp.append("\t");
         tmp.append(noteStrVec.at(i).toUtf8());
         tmp.append("\n");

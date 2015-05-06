@@ -30,15 +30,15 @@ static const uint qt_meta_data_DeviceAbstractGui[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      19,   18,   18,   18, 0x08,
-      37,   18,   18,   18, 0x08,
-      58,   18,   18,   18, 0x08,
+      24,   18,   19,   18, 0x08,
+      42,   18,   19,   18, 0x08,
+      63,   18,   18,   18, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_DeviceAbstractGui[] = {
-    "DeviceAbstractGui\0\0handleOkBtnSlot()\0"
+    "DeviceAbstractGui\0\0bool\0handleOkBtnSlot()\0"
     "handleApplyBtnSlot()\0handleCancelBtnSlot()\0"
 };
 
@@ -48,13 +48,14 @@ void DeviceAbstractGui::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         Q_ASSERT(staticMetaObject.cast(_o));
         DeviceAbstractGui *_t = static_cast<DeviceAbstractGui *>(_o);
         switch (_id) {
-        case 0: _t->handleOkBtnSlot(); break;
-        case 1: _t->handleApplyBtnSlot(); break;
+        case 0: { bool _r = _t->handleOkBtnSlot();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 1: { bool _r = _t->handleApplyBtnSlot();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 2: _t->handleCancelBtnSlot(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData DeviceAbstractGui::staticMetaObjectExtraData = {
