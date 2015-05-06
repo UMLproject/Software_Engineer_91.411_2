@@ -39,7 +39,7 @@ DeviceAbstractGui::DeviceAbstractGui(QWidget* parent) : QWidget(parent)
 
 void DeviceAbstractGui::handleOkBtnSlot()
 {
-    if(idStr != typeLe->text())
+    if(idStr != idLe->text())
     {
         cout << "adding" << endl;
         typeStr = typeLe->text();
@@ -54,17 +54,23 @@ void DeviceAbstractGui::handleOkBtnSlot()
         preferenceStrVec.push_back(preferenceStr);
         noteStrVec.push_back(noteStr);
         
+        typeLe->setText("");
+        idLe->setText("");
+        ipAddressLe->setText("");
+        preferenceCb->setCheckable(false);
+        noteTe->setText("");
+        
         this->close();
     }
     
-    //cout << toString() << endl;
+    cout << toString() << endl;
 
 }
 
 
 void DeviceAbstractGui::handleApplyBtnSlot()
 {
-    if(idStr != typeLe->text())
+    if(idStr != idLe->text())
     {
         typeStr = typeLe->text();
         idStr = idLe->text();
@@ -84,7 +90,30 @@ void DeviceAbstractGui::handleApplyBtnSlot()
 
 void DeviceAbstractGui::handleCancelBtnSlot()
 {
-    cout << "\"Cancel\" button pressed" << endl;
+    this->close();
+}
+
+
+string DeviceAbstractGui::toString()
+{
+    string tmp;
+    tmp.append("Type\tID\tIP Address\tPreference?\tNote\n");
+    
+    for(size_t i = 0; i < ipAddressStrVec.size(); i++)
+    {
+        tmp.append(typeStrVec.at(i).toUtf8());
+        tmp.append("\t");
+        tmp.append(idStrVec.at(i).toUtf8());
+        tmp.append("\t");
+        tmp.append(ipAddressStrVec.at(i).toUtf8());
+        tmp.append("\t");
+        tmp.append(preferenceStrVec.at(i) + "");
+        tmp.append("\t");
+        tmp.append(noteStrVec.at(i).toUtf8());
+        tmp.append("\n");
+    }
+    
+    return tmp;
 }
 
 
