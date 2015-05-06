@@ -15,6 +15,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QString>
+#include <QVector>
 #include <QCheckBox>
 #include <QTextEdit>
 #include <QPushButton>
@@ -39,6 +40,19 @@ private:
     QPushButton* okBtn; /**Button to save data and close entry GUI.*/
     QPushButton* applyBtn; /**Button to save data; do not close entry GUI.*/
     QPushButton* cancelBtn; /**Button to exit entry GUI without saving changes*/
+    
+    QString typeStr;
+    QString idStr;
+    QString ipAddressStr;
+    bool preferenceStr;
+    QString noteStr;
+    
+    QVector<QString> typeStrVec;
+    QVector<QString> idStrVec;
+    QVector<QString> ipAddressStrVec;
+    QVector<bool> preferenceStrVec;
+    QVector<QString> noteStrVec;
+    
     
     QFormLayout* formLayout; /**Layout to contain paired labels and entry points.*/
     QHBoxLayout* buttonLayout; /**Layout to contain this class's buttons.*/
@@ -66,6 +80,8 @@ public:
      * @param parent Pointer to an instance of abstract parent class.
      */
     DeviceAbstractGui(QWidget* parent = 0);
+    
+    string toString();
     
     /**
      * Destructor.

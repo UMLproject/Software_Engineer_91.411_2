@@ -13,6 +13,10 @@ DeviceAbstractGui::DeviceAbstractGui(QWidget* parent) : QWidget(parent)
     applyBtn = new QPushButton("Apply", this);
     cancelBtn = new QPushButton("Cancel", this);
     
+    connect(okBtn, SIGNAL(released()), this, SLOT(handleOkBtnSlot()));
+    connect(applyBtn, SIGNAL(released()), this, SLOT(handleApplyBtnSlot()));
+    connect(cancelBtn, SIGNAL(released()), this, SLOT(handleCancelBtnSlot()));
+    
     formLayout = new QFormLayout();
     formLayout->addRow(tr("&Type"), typeLe);
     formLayout->addRow(tr("&ID"), idLe);
@@ -35,13 +39,46 @@ DeviceAbstractGui::DeviceAbstractGui(QWidget* parent) : QWidget(parent)
 
 void DeviceAbstractGui::handleOkBtnSlot()
 {
-    cout << "\"Ok\" button pressed" << endl;
+    if(idStr != typeLe->text())
+    {
+        cout << "adding" << endl;
+        typeStr = typeLe->text();
+        idStr = idLe->text();
+        ipAddressStr = ipAddressLe->text();
+        bool preferenceStr = preferenceCb->isChecked();
+        noteStr = noteTe->toPlainText();
+    
+        typeStrVec.push_back(typeStr);
+        idStrVec.push_back(idStr);
+        ipAddressStrVec.push_back(ipAddressStr);
+        preferenceStrVec.push_back(preferenceStr);
+        noteStrVec.push_back(noteStr);
+        
+        this->close();
+    }
+    
+    //cout << toString() << endl;
+
 }
 
 
 void DeviceAbstractGui::handleApplyBtnSlot()
 {
-    cout << "\"Apply\" button pressed" << endl;
+    if(idStr != typeLe->text())
+    {
+        typeStr = typeLe->text();
+        idStr = idLe->text();
+        ipAddressStr = ipAddressLe->text();
+        bool preferenceStr = preferenceCb->isChecked();
+        noteStr = noteTe->toPlainText();
+    
+        typeStrVec.push_back(typeStr);
+        idStrVec.push_back(idStr);
+        ipAddressStrVec.push_back(ipAddressStr);
+        preferenceStrVec.push_back(preferenceStr);
+        noteStrVec.push_back(noteStr);
+
+    }
 }
 
 

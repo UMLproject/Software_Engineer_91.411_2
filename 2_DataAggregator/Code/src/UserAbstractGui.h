@@ -15,6 +15,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QString>
+#include <QVector>
 #include <QStringList>
 #include <QComboBox>
 #include <QTextEdit>
@@ -46,6 +47,23 @@ private:
     QPushButton* applyBtn; /**Button to save entered data without closing child GUI.*/
     QPushButton* cancelBtn; /**Button to close child GUI without saving data.*/
     
+    QString nameStr;
+    QString emailStr;
+    QString usernameStr;
+    QString passwordStr;
+    QString accountTypeStr;
+    QString exerciesStr;
+    QString noteStr;
+    
+    QVector<QString> nameStrVec;
+    QVector<QString> emailStrVec;
+    QVector<QString> usernameStrVec;
+    QVector<QString> passwordStrVec;
+    QVector<QString> accountTypeStrVec;
+    QVector<QString> exerciesStrVec;
+    QVector<QString> noteStrVec;
+    
+    
     QFormLayout* formLayout; /**Layout to contain lable/entry pairs.*/
     QHBoxLayout* buttonLayout; /**Layout to contain buttons relevent to this class.*/
     QGridLayout* outerLayout; /**Base layout to be entered directly to GUI.*/
@@ -67,6 +85,9 @@ public:
      * Method to unload the default buttons.
      */ 
     void unloadDefaultBtns();
+    
+    
+    string toString();
     
     /**
      * Destructor.
