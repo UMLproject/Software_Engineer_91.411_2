@@ -91,7 +91,7 @@ void DevicesGui::updateTableWidget()
     
     cout << endl << addDeviceGui->getTypesStrVec().size() << endl;
     
-    for(size_t i = 0; i <= tmpTypeStrVec.size(); i++)
+    for(size_t i = 0; i <= tableWidget->rowCount(); i++)
         tableWidget->removeRow(i);
     
     for(size_t i = 0; i < tmpTypeStrVec.size(); i++)
@@ -113,6 +113,10 @@ void DevicesGui::updateTableWidget()
         tableWidget->setItem(i, 2, prefItem);
         tableWidget->setItem(i, 3, noteItem);
     }
+    
+    if(tableWidget->rowCount() > 2)
+        tableWidget->removeRow( (tableWidget->rowCount() - 1) );
+    cout << "Row count: " << tableWidget->rowCount() << endl;
 }
 
 
