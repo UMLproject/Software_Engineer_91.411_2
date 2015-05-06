@@ -79,10 +79,17 @@ void UserAbstractGui::handleOkBtnSlot()
         exerciesStrVec.push_back(exerciesStr);
         noteStrVec.push_back(noteStr);
         
+        nameLe->setText("");
+        emailLe->setText("");
+        usernameLe->setText("");
+        passwordLe->setText("");
+        exerciesTe->setText("");
+        noteTe->setText("");
+        
         this->close();
     }
     
-    //cout << toString() << endl;
+    cout << toString() << endl;
    
 }
 
@@ -133,23 +140,23 @@ string UserAbstractGui::toString()
 {
     string tmp;
     tmp.append("Name\tEmail\tUsername\tPassword\tAccount Type\tExercise(s)\tNote\n");
-    /*for(size_t i = 0; i < usernameStrVec.size(); i++)
+    for(size_t i = 0; i < usernameStrVec.size(); i++)
     {
-        tmp.append(nameStrVec.at(i));
+        tmp.append(nameStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(emailStrVec.at(i));
+        tmp.append(emailStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(usernameStrVec.at(i));
+        tmp.append(usernameStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(passwordStrVec.at(i));
+        tmp.append(passwordStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(accountTypeStrVec.at(i));
+        tmp.append(accountTypeStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(exerciesStrVec.at(i));
+        tmp.append(exerciesStrVec.at(i).toUtf8());
         tmp.append("\t");
-        tmp.append(noteStrVec.at(i));
+        tmp.append(noteStrVec.at(i).toUtf8());
         tmp.append("\n");
-    }*/
+    }
     
     return tmp;
 }
