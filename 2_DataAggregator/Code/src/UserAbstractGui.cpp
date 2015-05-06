@@ -25,6 +25,10 @@ UserAbstractGui::UserAbstractGui(QWidget* parent) : QWidget(parent)
     applyBtn = new QPushButton("Apply", this);
     cancelBtn = new QPushButton("Cancel", this);
     
+    connect(okBtn, SIGNAL(released()), this, SLOT(handleOkBtnSlot()));
+    connect(applyBtn, SIGNAL(released()), this, SLOT(handleApplyBtnSlot()));
+    connect(cancelBtn, SIGNAL(released()), this, SLOT(handleCancelBtnSlot()));
+    
     formLayout = new QFormLayout();
     formLayout->addRow(tr("&Name"), nameLe);
     formLayout->addRow(tr("&Email"), emailLe);
@@ -57,19 +61,59 @@ void UserAbstractGui::handlePasswordLeSlot()
 
 void UserAbstractGui::handleOkBtnSlot()
 {
-    cout << "\"Ok\" button pressed" << endl;
+    if(usernameStr != usernameLe->text() )
+    {
+        nameStr = nameLe->text();
+        emailStr = emailLe->text();
+        usernameStr = usernameLe->text();
+        passwordStr = passwordLe->text();
+        accountTypeStr = accountTypeCb->currentText();
+        exerciesStr = exerciesTe->toPlainText();
+        noteStr = noteTe->toPlainText();
+    
+        nameStrVec.push_back(nameStr);
+        emailStrVec.push_back(emailStr);
+        usernameStrVec.push_back(usernameStr);
+        passwordStrVec.push_back(passwordStr);
+        accountTypeStrVec.push_back(accountTypeStr);
+        exerciesStrVec.push_back(exerciesStr);
+        noteStrVec.push_back(noteStr);
+        
+        this->close();
+    }
+    
+    //cout << toString() << endl;
+   
 }
 
 
 void UserAbstractGui::handleApplyBtnSlot()
 {
-    cout << "\"Apply\" button pressed" << endl;
+    if(usernameStr != usernameLe->text() )
+    {
+        nameStr = nameLe->text();
+        emailStr = emailLe->text();
+        usernameStr = usernameLe->text();
+        passwordStr = passwordLe->text();
+        accountTypeStr = accountTypeCb->currentText();
+        exerciesStr = exerciesTe->toPlainText();
+        noteStr = noteTe->toPlainText();
+    
+        nameStrVec.push_back(nameStr);
+        emailStrVec.push_back(emailStr);
+        usernameStrVec.push_back(usernameStr);
+        passwordStrVec.push_back(passwordStr);
+        accountTypeStrVec.push_back(accountTypeStr);
+        exerciesStrVec.push_back(exerciesStr);
+        noteStrVec.push_back(noteStr);
+
+    }
 }
 
 
 void UserAbstractGui::handleCancelBtnSlot()
 {
-    cout << "\"Cancel\" button pressed" << endl;
+    this->close();
 }
 
 
@@ -82,6 +126,32 @@ void UserAbstractGui::unloadDefaultBtns()
     applyBtn->setVisible(false);
     cancelBtn->setEnabled(false);
     cancelBtn->setVisible(false);
+}
+
+
+string UserAbstractGui::toString()
+{
+    string tmp;
+    tmp.append("Name\tEmail\tUsername\tPassword\tAccount Type\tExercise(s)\tNote\n");
+    /*for(size_t i = 0; i < usernameStrVec.size(); i++)
+    {
+        tmp.append(nameStrVec.at(i));
+        tmp.append("\t");
+        tmp.append(emailStrVec.at(i));
+        tmp.append("\t");
+        tmp.append(usernameStrVec.at(i));
+        tmp.append("\t");
+        tmp.append(passwordStrVec.at(i));
+        tmp.append("\t");
+        tmp.append(accountTypeStrVec.at(i));
+        tmp.append("\t");
+        tmp.append(exerciesStrVec.at(i));
+        tmp.append("\t");
+        tmp.append(noteStrVec.at(i));
+        tmp.append("\n");
+    }*/
+    
+    return tmp;
 }
 
 
