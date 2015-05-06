@@ -50,7 +50,7 @@ private:
     QVector<QString> typeStrVec;
     QVector<QString> idStrVec;
     QVector<QString> ipAddressStrVec;
-    QVector<bool> preferenceStrVec;
+    QVector<bool> preferenceBoolVec;
     QVector<QString> noteStrVec;
     
     
@@ -62,12 +62,12 @@ private slots:
     /**
      * Slot to save data and close entry GUI when "OK" button is pressed.
      */
-    void handleOkBtnSlot();
+    bool handleOkBtnSlot();
 
     /**
      * Slot to save data without closing entry GUI when "Apply" button is pressed.
      */
-    void handleApplyBtnSlot();
+    bool handleApplyBtnSlot();
 
     /**
      * Slot to close the entry GUI without saving data when "Cancel" button is pressed.
@@ -81,6 +81,11 @@ public:
      */
     DeviceAbstractGui(QWidget* parent = 0);
     
+    QVector<QString> getTypesStrVec();
+    QVector<QString> getIdStrVec();
+    QVector<QString> getIpAddressStrVec();
+    QVector<bool> getPreferenceBoolVec();
+    QVector<QString> getNoteStrVec();
     string toString();
     
     /**

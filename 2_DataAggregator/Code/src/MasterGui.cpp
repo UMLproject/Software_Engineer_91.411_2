@@ -461,6 +461,7 @@ void MasterGui::loadDevicesGui()
 {
     outerLayout->addWidget(devicesGui, 0, 0);
     devicesGui->setVisible(true);
+    devicesGui->updateTableWidget();
 }
 
 

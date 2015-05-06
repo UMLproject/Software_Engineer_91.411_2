@@ -19,7 +19,7 @@ DevicesGui::DevicesGui(QWidget* parent) : QWidget(parent)
     tableStrLst->append("ID");
     tableStrLst->append("Address");
     tableStrLst->append("Status");
-    tableWidget = new QTableWidget(5, 4, this);
+    tableWidget = new QTableWidget(1, 4, this);
     tableWidget->setHorizontalHeaderLabels(*tableStrLst);
     
     addBtn = new QPushButton("Add", this);
@@ -47,6 +47,8 @@ void DevicesGui::handleAddBtnSlot()
 {
     cout << "\"add\" button pressed" << endl;
     addDeviceGui->show();
+    
+
 }
 
 
@@ -54,6 +56,8 @@ void DevicesGui::handleModifyBtnSlot()
 {
     cout << "\"modify\" button pressed" << endl;
     modifyDeviceGui->show();
+    
+    updateTableWidget();
 }
 
 
@@ -72,6 +76,42 @@ void DevicesGui::handleRemoveBtnSlot()
             break;
         default:
             ;
+    }
+    
+    updateTableWidget();
+}
+
+
+void DevicesGui::updateTableWidget()
+{
+    QVector<QString> tmpTypeStrVec = addDeviceGui->getTypesStrVec();
+    QVector<QString> tmpIpAddressStrVec = addDeviceGui->getIpAddressStrVec();
+    QVector<bool> tmpPreferenceBoolVec = addDeviceGui->getPreferenceBoolVec();
+    QVector<QString> tmpNoteStrVec = addDeviceGui->getNoteStrVec();
+    
+    cout << endl << addDeviceGui->getTypesStrVec().size() << endl;
+    
+    for(size_t i = 0; i <= tmpTypeStrVec.size(); i++)
+        tableWidget->removeRow(i);
+    
+    for(size_t i = 0; i < tmpTypeStrVec.size(); i++)
+    {
+        QTableWidgetItem* typeItem = new QTableWidgetItem(tr(tmpTypeStrVec.at(i).toLatin1()));
+        QTableWidgetItem* ipAddrItem = new QTableWidgetItem(tr(tmpIpAddressStrVec.at(i).toLatin1()));
+        
+        QTableWidgetItem* prefItem;
+        if(tmpPreferenceBoolVec.at(i) == true)
+            prefItem = new QTableWidgetItem(tr("Yes"));
+        else
+            prefItem = new QTableWidgetItem(tr("No"));
+        
+        QTableWidgetItem* noteItem = new QTableWidgetItem(tr(tmpNoteStrVec.at(i).toLatin1()));
+        
+        tableWidget->insertRow(i);
+        tableWidget->setItem(i, 0, typeItem);
+        tableWidget->setItem(i, 1, ipAddrItem);
+        tableWidget->setItem(i, 2, prefItem);
+        tableWidget->setItem(i, 3, noteItem);
     }
 }
 

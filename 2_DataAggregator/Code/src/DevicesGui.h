@@ -14,9 +14,11 @@
 #define	DEVICES_GUI_H
 
 #include <QWidget>
+#include <QString>
 #include <QVector>
 #include <QStringList>
 #include <QTableWidget>
+#include <QTableWidgetItem>
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QGridLayout>
@@ -37,12 +39,12 @@ private:
     AddDeviceGui* addDeviceGui; /**Pointer to object of class AddDeviceGui.*/
     ModifyDeviceGui* modifyDeviceGui; /**Pointer to object of class ModifyDeviceGui.*/
     
-    QMessageBox* verifyMessageBox; /**Mesage box to ask user to verify data before saving entries.*/
+    QMessageBox* verifyMessageBox; /**Message box to ask user to verify data before saving entries.*/
     
     QStringList* tableStrLst; /**List of device data.*/
     QTableWidget* tableWidget; /**Table to display device data.*/
     QPushButton* addBtn; /**Button to add new device data.*/
-    QPushButton* modifyBtn; /**Button to submit modifyed device data.*/
+    QPushButton* modifyBtn; /**Button to submit modified device data.*/
     QPushButton* removeBtn; /**Button to remove device data.*/
     QHBoxLayout* buttonLayout; /**Layout to contain buttons contained in this class.*/
     QGridLayout* outerLayout; /**Base layout added directly to the class.*/
@@ -70,6 +72,8 @@ public:
      * @param parent Pointer to object of parent class QWidget.
      */
     DevicesGui(QWidget* parent = 0);
+    
+    void updateTableWidget();
     
     /**
      * Destructor.
