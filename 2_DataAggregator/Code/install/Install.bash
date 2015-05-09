@@ -14,6 +14,14 @@
 
 #!/bin/bash
 
+echo "*******************************************************"
+echo "Welcome to Group 2 Subgroup 2's installer script."
+echo "You MUST be on a Linux system.  We suggest that you"
+echo "run Ubuntu 14.04, since that is the system which this"
+echo "application has been tested on."
+echo "*******************************************************"
+echo "\n\n\n"
+
 #
 echo "Is the repository already downloaded? (Y/n)"
 read CHOICE
@@ -25,7 +33,7 @@ fi
 
 
 #
-echo "Do you want this script to install depencendies? (Y/n)?"
+echo "Do you want this script to install dependencies? (Y/n)?"
 read CHOICE
 
 if [ "$CHOICE" == "y" ] || [ "$CHOICE" == "Y" ]; then
@@ -39,4 +47,6 @@ fi
 
 
 #
-
+echo "Finished installing dependencies"
+echo "Now follow the Build & Run instructions in the README"
+echo "to link and, compile, and the project"
