@@ -16,7 +16,7 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 - Build & Run
 
 
-To see the demo, go to: https://github.com/DeepBlue14/Software_Engineer_91.411_2/tree/master/2_DataAggregator/Demo
+To see the demo, go to: https://github.com/DeepBlue14/Software_Engineer_91.411_2/blob/master/2_DataAggregator/Demo/README.md
 
 
 
