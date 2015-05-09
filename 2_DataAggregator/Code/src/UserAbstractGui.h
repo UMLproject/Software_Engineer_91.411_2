@@ -15,6 +15,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QString>
+#include <QMessageBox>
 #include <QVector>
 #include <QStringList>
 #include <QComboBox>
@@ -70,7 +71,7 @@ private:
     
 private slots:
     void handlePasswordLeSlot(); /**Slot to load retypePassword fields when password is innitialy entered.*/
-    void handleOkBtnSlot(); /**Slot to handle "OK" button.*/
+    bool handleOkBtnSlot(); /**Slot to handle "OK" button.*/
     void handleApplyBtnSlot(); /**Slot to handle "Apply" button.*/
     void handleCancelBtnSlot(); /**Slot to handle "Cancel" button.*/
     
@@ -85,6 +86,11 @@ public:
      * Method to unload the default buttons.
      */ 
     void unloadDefaultBtns();
+    
+    QVector<QString> getNameStrVec();
+    QVector<QString> getEmailStrVec();
+    QVector<QString> getUsernameStrVec();
+    QVector<QString> getPasswordStrVec();
     
     
     string toString();

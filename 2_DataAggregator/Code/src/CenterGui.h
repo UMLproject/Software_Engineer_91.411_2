@@ -30,12 +30,8 @@ private:
     /**
      * Pointer to a QLabel displaying the user's last login date/time.
      */
-    QLabel* lastLoginLbl;
-    
-    /**
-     * Pointer to a QLabel displaying the user's list of exercises.
-     */
-    QLabel* exercisesLbl;
+    QLabel* textLbl;
+
     
     /**
      * Pointer to a QGridLayout which will be the base layout.

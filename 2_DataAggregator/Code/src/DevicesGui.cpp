@@ -69,7 +69,9 @@ void DevicesGui::handleRemoveBtnSlot()
     switch(ret)
     {
         case QMessageBox::Yes:
-            ;
+            cout << "delete?: " << tableWidget->selectedItems().at(0)->row() << endl;
+            addDeviceGui->deleteRow(tableWidget->selectedItems().at(0)->row());
+            updateTableWidget();
             break;
         case QMessageBox::No:
             ;
@@ -77,26 +79,26 @@ void DevicesGui::handleRemoveBtnSlot()
         default:
             ;
     }
-    
-    updateTableWidget();
 }
 
 
 void DevicesGui::updateTableWidget()
 {
     QVector<QString> tmpTypeStrVec = addDeviceGui->getTypesStrVec();
+    QVector<QString> tmpIdStrVec = addDeviceGui->getIdStrVec();
     QVector<QString> tmpIpAddressStrVec = addDeviceGui->getIpAddressStrVec();
     QVector<bool> tmpPreferenceBoolVec = addDeviceGui->getPreferenceBoolVec();
     QVector<QString> tmpNoteStrVec = addDeviceGui->getNoteStrVec();
     
     cout << endl << addDeviceGui->getTypesStrVec().size() << endl;
     
-    for(size_t i = 0; i <= tmpTypeStrVec.size(); i++)
+    for(size_t i = 0; i <= tableWidget->rowCount(); i++)
         tableWidget->removeRow(i);
     
     for(size_t i = 0; i < tmpTypeStrVec.size(); i++)
     {
         QTableWidgetItem* typeItem = new QTableWidgetItem(tr(tmpTypeStrVec.at(i).toLatin1()));
+        QTableWidgetItem* idStrItem = new QTableWidgetItem(tr(tmpIdStrVec.at(i).toLatin1()));
         QTableWidgetItem* ipAddrItem = new QTableWidgetItem(tr(tmpIpAddressStrVec.at(i).toLatin1()));
         
         QTableWidgetItem* prefItem;
@@ -109,10 +111,14 @@ void DevicesGui::updateTableWidget()
         
         tableWidget->insertRow(i);
         tableWidget->setItem(i, 0, typeItem);
-        tableWidget->setItem(i, 1, ipAddrItem);
-        tableWidget->setItem(i, 2, prefItem);
-        tableWidget->setItem(i, 3, noteItem);
+        tableWidget->setItem(i, 1, idStrItem);
+        tableWidget->setItem(i, 2, ipAddrItem);
+        tableWidget->setItem(i, 3, prefItem);
     }
+    
+    if(tableWidget->rowCount() > 2)
+        tableWidget->removeRow( (tableWidget->rowCount() - 1) );
+    cout << "Row count: " << tableWidget->rowCount() << endl;
 }
 
 

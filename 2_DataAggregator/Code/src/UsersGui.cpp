@@ -16,16 +16,18 @@ UsersGui::UsersGui(QWidget* parent) : QWidget(parent)
     tableStrLst = new QStringList();
     tableStrLst->append("Name");
     tableStrLst->append("Email");
-    tableStrLst->append("Exercise(s)");
-    tableStrLst->append("More");
-    tableWidget = new QTableWidget(5, 4, this);
+    //tableStrLst->append("Exercise(s)");
+    //tableStrLst->append("More");
+    tableWidget = new QTableWidget(5, 2, this);
     tableWidget->setHorizontalHeaderLabels(*tableStrLst);
     //tableWidget->setCellWidget(4, 3, new QPushButton("More", this) );
+/*
     for(size_t i = 0; i < tableWidget->rowCount(); i++)
     {
         tableWidget->setCellWidget(i, 2, new QComboBox(this) );
         tableWidget->setCellWidget(i, 3, new QPushButton("More", this) );
     }
+*/
     
     addBtn = new QPushButton("Add", this);
     modifyBtn = new QPushButton("Modify", this);
@@ -65,6 +67,8 @@ void UsersGui::handleModifyBtnSlot()
 {
     cout << "\"modify\" button pressed" << endl;
     modifyUserGui->show();
+    
+    updateTableWidget();
 }
 
 
@@ -84,6 +88,31 @@ void UsersGui::handleRemoveBtnSlot()
         default:
             ;
     }
+}
+
+
+void UsersGui::updateTableWidget()
+{
+    cout << "!!!!!!!!!UPDATING TABLE*********************" << endl;
+    QVector<QString> tmpNameStrVec = addUserGui->getNameStrVec();
+    QVector<QString> tmpEmailStrVec = addUserGui->getEmailStrVec();
+    
+    for(size_t i = 0; i <= tableWidget->rowCount(); i++)
+        tableWidget->removeRow(i);
+    
+    for(size_t i = 0; i < tmpNameStrVec.size(); i++)
+    {
+        QTableWidgetItem* nameItem = new QTableWidgetItem(tr(tmpNameStrVec.at(i).toLatin1()));
+        QTableWidgetItem* emailStrItem = new QTableWidgetItem(tr(tmpEmailStrVec.at(i).toLatin1()));
+        
+        tableWidget->insertRow(i);
+        tableWidget->setItem(i, 0, nameItem);
+        tableWidget->setItem(i, 1, emailStrItem);
+    }
+    
+    if(tableWidget->rowCount() > 2)
+        tableWidget->removeRow( (tableWidget->rowCount() - 1) );
+    cout << "Row count: " << tableWidget->rowCount() << endl;
 }
 
 

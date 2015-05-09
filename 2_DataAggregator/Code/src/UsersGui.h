@@ -13,6 +13,7 @@
 
 #include <QWidget>
 #include <QVector>
+#include <QString>
 #include <QStringList>
 #include <QTableWidget>
 #include <QPushButton>
@@ -60,6 +61,9 @@ public:
      * @param parent Pointer to object of parent class type QWidget.
      */
     UsersGui(QWidget* parent = 0);
+    
+    
+    void updateTableWidget();
     
     /**
      * Destructor.

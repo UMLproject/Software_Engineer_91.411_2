@@ -31,16 +31,16 @@ static const uint qt_meta_data_UserAbstractGui[] = {
 
  // slots: signature, parameters, type, tag, flags
       17,   16,   16,   16, 0x08,
-      40,   16,   16,   16, 0x08,
-      58,   16,   16,   16, 0x08,
-      79,   16,   16,   16, 0x08,
+      45,   16,   40,   16, 0x08,
+      63,   16,   16,   16, 0x08,
+      84,   16,   16,   16, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_UserAbstractGui[] = {
     "UserAbstractGui\0\0handlePasswordLeSlot()\0"
-    "handleOkBtnSlot()\0handleApplyBtnSlot()\0"
+    "bool\0handleOkBtnSlot()\0handleApplyBtnSlot()\0"
     "handleCancelBtnSlot()\0"
 };
 
@@ -51,13 +51,13 @@ void UserAbstractGui::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         UserAbstractGui *_t = static_cast<UserAbstractGui *>(_o);
         switch (_id) {
         case 0: _t->handlePasswordLeSlot(); break;
-        case 1: _t->handleOkBtnSlot(); break;
+        case 1: { bool _r = _t->handleOkBtnSlot();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 2: _t->handleApplyBtnSlot(); break;
         case 3: _t->handleCancelBtnSlot(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData UserAbstractGui::staticMetaObjectExtraData = {

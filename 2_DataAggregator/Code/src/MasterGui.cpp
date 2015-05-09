@@ -370,7 +370,6 @@ void MasterGui::loadUserAbstractGui()
 
 void MasterGui::unloadUserAbstractGui()
 {
-    cout << "MasterGui::unloadAddUserGui() has not been implemented yet" << endl;
     outerLayout->removeWidget(userAbstractGui);
     userAbstractGui->setVisible(false);
     outerLayout->removeItem(registerBtnLayout);
@@ -447,6 +446,7 @@ void MasterGui::loadUsersGui()
 {
     outerLayout->addWidget(usersGui, 0, 0);
     usersGui->setVisible(true);
+    usersGui->updateTableWidget();
 }
 
 
