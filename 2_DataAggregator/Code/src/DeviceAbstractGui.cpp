@@ -1,5 +1,3 @@
-#include <qt4/QtGui/qmessagebox.h>
-
 #include "DeviceAbstractGui.h"
 
 
@@ -161,6 +159,19 @@ string DeviceAbstractGui::toString()
     }
     
     return tmp;
+}
+
+
+void DeviceAbstractGui::deleteRow(int index)
+{
+    if(index < typeStrVec.size())
+    {
+        typeStrVec.remove(index);
+        idStrVec.remove(index);
+        ipAddressStrVec.remove(index);
+        preferenceBoolVec.remove(index);
+        noteStrVec.remove(index);
+    }
 }
 
 

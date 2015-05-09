@@ -59,7 +59,7 @@ void UserAbstractGui::handlePasswordLeSlot()
 }
 
 
-void UserAbstractGui::handleOkBtnSlot()
+bool UserAbstractGui::handleOkBtnSlot()
 {
     if(usernameStr != usernameLe->text() )
     {
@@ -90,7 +90,14 @@ void UserAbstractGui::handleOkBtnSlot()
     }
     
     cout << toString() << endl;
-   
+    
+    QMessageBox* msg = new QMessageBox();
+    msg->setText("<qt><b>Note!</b><qt>");
+    msg->setInformativeText("<qt>\nPress the <b>Users</b> button to update the table</qt>");
+    msg->setStandardButtons(QMessageBox::Ok);
+    msg->exec();
+    
+    return true;
 }
 
 
@@ -133,6 +140,30 @@ void UserAbstractGui::unloadDefaultBtns()
     applyBtn->setVisible(false);
     cancelBtn->setEnabled(false);
     cancelBtn->setVisible(false);
+}
+
+
+QVector<QString> UserAbstractGui::getNameStrVec()
+{
+    return nameStrVec;
+}
+
+
+QVector<QString> UserAbstractGui::getEmailStrVec()
+{
+    return emailStrVec;
+}
+
+
+QVector<QString> UserAbstractGui::getUsernameStrVec()
+{
+    return usernameStrVec;
+}
+
+
+QVector<QString> UserAbstractGui::getPasswordStrVec()
+{
+    return passwordStrVec;
 }
 
 

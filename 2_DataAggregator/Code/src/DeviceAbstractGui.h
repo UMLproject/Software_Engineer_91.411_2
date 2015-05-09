@@ -14,6 +14,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QString>
 #include <QVector>
 #include <QCheckBox>
@@ -86,6 +87,7 @@ public:
     QVector<QString> getIpAddressStrVec();
     QVector<bool> getPreferenceBoolVec();
     QVector<QString> getNoteStrVec();
+    void deleteRow(int index);
     string toString();
     
     /**
