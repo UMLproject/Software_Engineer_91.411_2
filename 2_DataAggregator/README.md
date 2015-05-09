@@ -11,7 +11,6 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 
 
 ####**Index**
-- Project Synopsis
 - Dependencies
 - Installation
 - Build & Run
@@ -19,9 +18,6 @@ Robert Vecchione, Robert_Vecchione@student.uml.edu
 
 To see the demo, go to: https://github.com/DeepBlue14/Software_Engineer_91.411_2/tree/master/2_DataAggregator/Demo
 
-
-####**Project Synopsis**
-*(TBA)*
 
 
 ####**Dependencies**
