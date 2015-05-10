@@ -65,7 +65,7 @@ Start NetBeans, press the "**Open Project**" button.  Navigate to the project, a
 - Next, select "Linker" from the options on the left.
 - Under "Libraries" should be listed "**qjson**" and "**sqlite3**".  If these are NOT present, then select the "..." button, type "Add Library..." and type "qjson".  Press "OK".  Then repete the operation to add "sqlite3".
 
-If this is done correctly, the application should be ready to compile/run.  Press the green arrow run button to launch the app.
+If this is done correctly, the application should be ready to compile/run.  Run the "Clean&Build" button.  Press the green arrow run button to launch the app.
 
 
 
